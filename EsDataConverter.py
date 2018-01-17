@@ -7,9 +7,7 @@ CANMA = '"'
 
 class Converter:
     inputDateFomat = False
-
-    def __init__(self):
-        self.INPUT_DATE_FORMAT_SIRIAL = '%Y%m%d'
+    INPUT_DATE_FORMAT_SIRIAL = '%Y%m%d'
 
     def LoadCsvFile(self, csvFile):
         with open(csvFile, newline='') as f:
@@ -44,7 +42,7 @@ class Converter:
         OUTPUT_DATE_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
 
         if self.inputDateFomat:
-            date = datetime.datetime.strptime(dateStr, inputDateFomat)
+            date = datetime.datetime.strptime(dateStr, self.inputDateFomat)
         else:
             try:
                 date = datetime.datetime.strptime(dateStr, DEFAULT_INPUT_DATE_FORMAT_1)
